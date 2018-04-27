@@ -19,6 +19,17 @@ public class LogUtil {
         }
     }
 
+    public static void init(Class clazz) {
+        if (logger==null) {
+            logger = Logger.getLogger(clazz);
+        }
+    }
+
+    public static void debug(String content) {
+        init(LogUtil.class);
+        logger.debug(content);
+    }
+
     public static void debug(String content, String moduleName) {
         init(moduleName);
         logger.debug(content);
